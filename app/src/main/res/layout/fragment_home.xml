@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+    <ViewFlipper
+        android:scrollbarFadeDuration="1000"
+        android:layout_width="match_parent"
+        android:layout_height="396dp"
+        android:autoStart="true">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="397dp"
+            android:layout_marginBottom="8dp"
+            android:baselineAligned="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/homebackgroud"/>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="397dp"
+            android:layout_marginBottom="8dp"
+            android:baselineAligned="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back2"/>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="397dp"
+            android:layout_marginBottom="8dp"
+            android:baselineAligned="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back3"/>
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="397dp"
+            android:layout_marginBottom="8dp"
+            android:baselineAligned="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back4"/>
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="397dp"
+            android:layout_marginBottom="8dp"
+            android:baselineAligned="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back5"/>
+
+    </ViewFlipper>
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="365dp"
+        android:background="@color/white"
+        android:text="Breath"
+        android:textSize="40sp"
+
+        />
+
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="405dp"
+        android:backgroundTint="@color/white"
+        android:text="Nature"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnOut"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="480dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/outdoor"
+
+        />
+
+    <Button
+        android:id="@+id/btIN"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginStart="150dp"
+
+        android:background="@drawable/indoor" />
+    <Button
+        android:id="@+id/btnflo"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="10dp"
+        android:layout_gravity="right"
+        android:background="@drawable/flower" />
+
+</FrameLayout>

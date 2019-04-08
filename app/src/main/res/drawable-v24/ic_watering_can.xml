@@ -1,0 +1,18 @@
+<vector android:alpha="0.69" android:height="50dp"
+    android:viewportHeight="512" android:viewportWidth="512.00104"
+    android:width="50dp" xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#a0d927" android:pathData="m512,212.309h-43.828v-21.914c0,-60.414 -49.152,-109.566 -109.566,-109.566 -60.418,0 -109.57,49.152 -109.57,109.566v21.914h-43.824v-21.914c0,-84.578 68.809,-153.395 153.395,-153.395 84.582,0 153.395,68.816 153.395,153.395zM512,212.309"/>
+    <path android:fillColor="#d9f0a9" android:pathData="m227.121,453.359 l-224.219,-244.602c-6.441,-7.027 -1.457,-18.363 8.078,-18.363h33.527c4.742,0 9.355,1.539 13.148,4.383l169.465,127.102zM227.121,453.359"/>
+    <path android:fillColor="#ecf7d4" android:pathData="m512,190.395h-306.789v262.965c0,12.102 9.809,21.914 21.91,21.914h262.965c12.102,0 21.914,-9.813 21.914,-21.914zM512,190.395"/>
+    <path android:fillColor="#e2f4be" android:pathData="m249.035,431.445v-241.051h-43.824v262.965c0,12.102 9.809,21.914 21.91,21.914h262.965c12.102,0 21.914,-9.813 21.914,-21.914h-241.051c-12.102,0 -21.914,-9.809 -21.914,-21.914zM249.035,431.445"/>
+    <path android:pathData="m373.68,262.148c-8.453,-8.012 -21.695,-8.012 -30.148,0 -11.887,11.262 -50.668,50.445 -50.668,81.648 0,36.25 29.492,65.738 65.742,65.738 36.246,0 65.742,-29.488 65.742,-65.738 0,-31.207 -38.781,-70.387 -50.668,-81.648zM373.68,262.148">
+        <aapt:attr name="android:fillColor">
+            <gradient android:endX="406.0494" android:endY="257.38904"
+                android:startX="311.16058" android:startY="352.27783" android:type="linear">
+                <item android:color="#FFB3E152" android:offset="0"/>
+                <item android:color="#FFF6E46F" android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:fillColor="#fff" android:pathData="m402.434,343.793c0,12.102 -9.813,21.914 -21.914,21.914 -12.102,0 -21.914,-9.813 -21.914,-21.914 0,-12.102 9.813,-21.914 21.914,-21.914 12.102,0 21.914,9.813 21.914,21.914zM402.434,343.793"/>
+</vector>
