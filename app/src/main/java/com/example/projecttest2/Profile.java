@@ -26,11 +26,9 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
        View v = inflater.inflate(R.layout.fragment_profile, container , false);
 
         TextView name =v.findViewById(R.id.user_name_profil);
-
         name.setText(prevalebt.onlineuser.getName());
 
 

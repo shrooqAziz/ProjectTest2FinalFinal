@@ -1,11 +1,9 @@
 package com.example.projecttest2;
 
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,15 +13,12 @@ import android.widget.ImageView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
-import java.io.ByteArrayOutputStream;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class outdoor extends Fragment {
+public class showPlants extends Fragment {
 
     RecyclerView mRecyclerView;
     FirebaseDatabase mFirebaseDatabase;
@@ -32,20 +27,17 @@ public class outdoor extends Fragment {
     ImageView backbtn;
 
 
-
-    public outdoor() {
-        // Required empty public constructor
+    public showPlants() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_outdoor, container, false);
+        v = inflater.inflate(R.layout.fragment_show_plants, container, false);
 
         mRecyclerView = v.findViewById(R.id.recycle_viewout);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        mRef = FirebaseDatabase.getInstance().getReference().child("outdoor");
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
 
 
 
@@ -61,10 +53,12 @@ public class outdoor extends Fragment {
 
         return v;
     }
+    @Override
     public void onStart() {
 
         super.onStart();
 
+        mRef = FirebaseDatabase.getInstance().getReference("plants");
         FirebaseRecyclerAdapter<Model , ImageViewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, ImageViewHolder>(
                         Model.class,
@@ -92,14 +86,12 @@ public class outdoor extends Fragment {
                                 getFragmentManager().beginTransaction().replace(R.id.countainer, frag).addToBackStack(null).commit();
                                 frag.setArguments(data);
 
-
-
                             }
                         });
                     }
                 };
         mRecyclerView.setAdapter(firebaseRecyclerAdapter);
-        firebaseRecyclerAdapter.startListening();
+
 
 
     }

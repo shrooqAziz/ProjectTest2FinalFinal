@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tv1;
-    private TextView tv2;
+    private TextView tx1;
+    private TextView tx2;
     private ImageView iv;
 
 
@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //https://www.youtube.com/watch?v=h_hTuaEpc-8
-        tv1=(TextView) findViewById(R.id.title1);
-        tv2=(TextView) findViewById(R.id.title2);
+        tx1=(TextView) findViewById(R.id.title1);
+        tx2=(TextView) findViewById(R.id.title2);
         iv=(ImageView) findViewById(R.id.logo);
 
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
-        tv1.startAnimation(myanim);
-        tv2.startAnimation(myanim);
+        tx1.startAnimation(myanim);
+        tx2.startAnimation(myanim);
         iv.startAnimation(myanim);
 
         final Intent tohome = new Intent(this,HomeActivity.class);

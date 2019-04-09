@@ -76,32 +76,16 @@
         android:text="Nature"
         android:textSize="40dp"
         android:textStyle="bold" />
+
     <Button
-        android:id="@+id/btnOut"
+        android:id="@+id/show_plant_btn"
         android:layout_width="105dp"
         android:layout_height="105dp"
-        android:layout_gravity="left"
-        android:layout_marginTop="480dp"
-        android:layout_marginStart="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="220dp"
         android:background="@drawable/outdoor"
 
         />
 
-    <Button
-        android:id="@+id/btIN"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginStart="150dp"
-
-        android:background="@drawable/indoor" />
-    <Button
-        android:id="@+id/btnflo"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="480dp"
-        android:layout_marginEnd="10dp"
-        android:layout_gravity="right"
-        android:background="@drawable/flower" />
 
 </FrameLayout>

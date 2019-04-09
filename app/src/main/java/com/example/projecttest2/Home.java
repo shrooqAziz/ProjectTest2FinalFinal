@@ -28,43 +28,20 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-       Button btnOut = (Button)rootView.findViewById(R.id.btnOut);
-        btnOut.setOnClickListener(new View.OnClickListener()
+       Button showbtn = (Button)rootView.findViewById(R.id.show_plant_btn);
+        showbtn.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
 
-                outdoor gotooutdoor = new outdoor();
+                showPlants gotoplants = new showPlants();
                 FragmentManager mn = getFragmentManager();
-                mn.beginTransaction().replace(R.id.countainer ,gotooutdoor).addToBackStack(Home.class.getSimpleName()).commit();
+                mn.beginTransaction().replace(R.id.countainer ,gotoplants).addToBackStack(Home.class.getSimpleName()).commit();
 
             }
 
         });
-        Button btnIN = (Button)rootView.findViewById(R.id.btIN);
-        btnIN.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                indoor gotoIndoor = new indoor();
-                FragmentManager mn = getFragmentManager();
-                mn.beginTransaction().replace(R.id.countainer ,gotoIndoor).addToBackStack(Home.class.getSimpleName()).commit();
 
-            }
-
-        });
-        Button btnflow = (Button)rootView.findViewById(R.id.btnflo);
-        btnflow.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                flower gotoflower = new flower();
-                FragmentManager mn = getFragmentManager();
-                mn.beginTransaction().replace(R.id.countainer ,gotoflower).addToBackStack(Home.class.getSimpleName()).commit();
-
-            }
-
-        });
         return rootView;
     }
 }
