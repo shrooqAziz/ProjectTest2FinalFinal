@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,18 +21,17 @@ public class Account extends Fragment {
         // Required empty public constructor
     }
 
-    TextView signInbtn , signUPbtn, logOut;
+    TextView signInbtn , signUPbtn;
 
     View v;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         v = inflater.inflate(R.layout.fragment_account, container, false);
+
         signInbtn = v.findViewById(R.id.signIntx);
         signUPbtn = v.findViewById(R.id.SignUptx);
-       // logOut = v.findViewById(R.id.log_out);
 
         final Intent signUPpage = new Intent(getActivity(),SignUPActivity.class);
         signUPbtn.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +48,6 @@ public class Account extends Fragment {
             }
 
         });
-
 
         return v;
     }

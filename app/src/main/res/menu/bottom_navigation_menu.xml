@@ -8,7 +8,7 @@
         android:id="@+id/searchnav"
         android:icon="@drawable/search"/>
 
-    <item android:title="User"
+    <item android:title="Profile"
         android:id="@+id/user_profile"
         android:icon="@drawable/user"/>
 

@@ -1,4 +1,5 @@
 package com.example.projecttest2;
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    userAccountProfile userProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         final Home homefrag = new Home();
         final Account Accountfrag = new Account();
         final Search searchfrag = new Search();
-        final Profile profilefrag = new Profile();
+         userProfile = new userAccountProfile();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
             @Override
@@ -34,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
                         setFragment(searchfrag);
                         return true;
                     case R.id.user_profile:
-                        setFragment(profilefrag);
+                        setFragment(userProfile);
                         return true;
                     case R.id.usernav:
                         setFragment(Accountfrag);

@@ -24,7 +24,7 @@
             android:text="Breath nature"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@color/logo"
             android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,5 +100,10 @@
 
 
     </android.support.constraint.ConstraintLayout>
+
+
+
+
+
 
 </FrameLayout>

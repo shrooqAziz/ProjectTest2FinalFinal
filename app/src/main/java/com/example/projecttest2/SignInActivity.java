@@ -1,11 +1,8 @@
 package com.example.projecttest2;
 
-import android.app.FragmentManager;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -14,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +24,8 @@ public class SignInActivity extends AppCompatActivity {
     EditText passinput;
     Button signIn;
     private String parentDbname = "user";
+    String username ;
+    String password;
 
 
 
@@ -51,8 +49,8 @@ public class SignInActivity extends AppCompatActivity {
 
     private void loginUser() {
 
-        String username =userinput.getText().toString();
-        String password = passinput.getText().toString();
+         username =userinput.getText().toString();
+         password = passinput.getText().toString();
 
          if(TextUtils.isEmpty(username)){
             Toast.makeText(this,"please enter your username .. ",Toast.LENGTH_LONG).show();
@@ -86,8 +84,6 @@ public class SignInActivity extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(),HomeActivity.class);
                             startActivity(i);
 
-
-
                         }
                         else
                             Toast.makeText(getApplicationContext(), "password wrong .. ", Toast.LENGTH_LONG).show();
@@ -103,4 +99,5 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
+
 }

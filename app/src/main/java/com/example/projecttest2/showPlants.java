@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class showPlants extends Fragment {
 
     RecyclerView mRecyclerView;
-    FirebaseDatabase mFirebaseDatabase;
     DatabaseReference mRef;
     View v;
     ImageView backbtn;

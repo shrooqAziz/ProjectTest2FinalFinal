@@ -1,27 +1,20 @@
 package com.example.projecttest2;
 
-
-import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -33,9 +26,9 @@ import java.util.HashMap;
 public class plantDetail extends Fragment {
 
     TextView plantName1, water1, sun1, loc1;
-    ImageView plantpic1;
+    ImageView plantpic1, backbtndetail ;
     FloatingActionButton addbtn;
-    String name, water, sun, loc, plantpic;
+    String plantname, water, sun, loc, plantpic;
 
     public plantDetail() {
         // Required empty public constructor
@@ -54,55 +47,67 @@ public class plantDetail extends Fragment {
         plantpic1 = v.findViewById(R.id.Image_ret);
         addbtn = v.findViewById(R.id.add_to_user);
 
-        name = getArguments().getString("name");
+        plantname = getArguments().getString("name");
         water = getArguments().getString("water");
         sun = getArguments().getString("sun");
         loc = getArguments().getString("loc");
         plantpic = getArguments().getString("image");
 
-        plantName1.setText(name);
+        plantName1.setText(plantname);
         water1.setText(water);
         sun1.setText(sun);
         loc1.setText(loc);
         Picasso.get().load(plantpic).into(plantpic1);
 
+            addbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        addbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                adduserplants();
+                    adduserplants();
 
 
-            }
-        });
+                }
+            });
 
+            backbtndetail = v.findViewById(R.id.backbtn);
+            backbtndetail.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+
+                    Search gotosearch = new Search();
+                    FragmentManager mn = getFragmentManager();
+                    mn.beginTransaction().replace(R.id.countainer, gotosearch, gotosearch.getTag()).commit();
+                }
+            });
 
         return v;
     }
 
     private void adduserplants() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference mRef = firebaseDatabase.getReferenceFromUrl("https://project-test-5c4a5.firebaseio.com/").child("user plants");
-        final HashMap<String, Object> usrplant = new HashMap<>();
-        usrplant.put("name",name);
-        usrplant.put("water",water);
-        usrplant.put("sun",sun);
-        usrplant.put("loc",loc);
+        final DatabaseReference mRefusr;
+        mRefusr = firebaseDatabase.getInstance().getReference().child("user plants");
 
-        mRef.child(prevalebt.onlineuser.getName()).updateChildren(usrplant)
+        final HashMap<String, Object> usrplant = new HashMap<>();
+        usrplant.put("name", plantname);
+        usrplant.put("water", water);
+        usrplant.put("sun", sun);
+        usrplant.put("loc", loc);
+        usrplant.put("image", plantpic);
+
+
+        mRefusr.child(prevalebt.onlineuser.getName())
+                .child("userlist").child(plantname).updateChildren(usrplant)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(getActivity(), " plant added ..", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(getActivity(),HomeActivity.class);
-                            startActivity(i);
-                        }
-                        else
+
+                        } else
                             Toast.makeText(getActivity(), "sorry try again .. ", Toast.LENGTH_LONG).show();
                     }
                 });
+
     }
 }
 
