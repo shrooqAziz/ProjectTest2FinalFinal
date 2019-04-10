@@ -1,5 +1,6 @@
 package com.example.projecttest2;
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -23,16 +25,18 @@ import java.util.HashMap;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class plantDetail extends Fragment {
+public class plantDetailSearch extends Fragment {
+
+
+    public plantDetailSearch() {
+        // Required empty public constructor
+    }
 
     TextView plantName1, water1, sun1, loc1;
-    ImageView plantpic1, backbtndetail;
+    ImageView plantpic1 ,backbtnsearch;
     FloatingActionButton addbtn;
     String plantname, water, sun, loc, plantpic;
 
-    public plantDetail() {
-        // Required empty public constructor
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,26 +63,24 @@ public class plantDetail extends Fragment {
         loc1.setText(loc);
         Picasso.get().load(plantpic).into(plantpic1);
 
-            addbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        addbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    adduserplants();
+                adduserplants();
 
 
-                }
-            });
+            }
+        });
+        backbtnsearch = v.findViewById(R.id.backbsearchtn);
+        backbtnsearch.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
-            backbtndetail = v.findViewById(R.id.backbtn);
-            backbtndetail.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-
-                    showPlants gotoplants = new showPlants();
-                    FragmentManager mn = getFragmentManager();
-                    mn.beginTransaction().replace(R.id.countainer, gotoplants, gotoplants.getTag()).commit();
-                }
-            });
-
+                Search gotosearch = new Search();
+                FragmentManager mn = getFragmentManager();
+                mn.beginTransaction().replace(R.id.countainer, gotosearch, gotosearch.getTag()).commit();
+            }
+        });
 
         return v;
     }
@@ -111,5 +113,3 @@ public class plantDetail extends Fragment {
 
     }
 }
-
-

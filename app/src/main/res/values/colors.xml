@@ -6,8 +6,9 @@
     <color name="grey">#B8B5B5</color>
     <color name="green">#B44CA351</color>
     <color name="white">#83FFFFFF</color>
-    <color name="whiteback">#fff</color>
+    <color name="whiteback">#FFFFFF</color>
     <color name="black">#D90B0909</color>
     <color name="logo">#900C0A0A</color>
     <color name="profile">#2A0C0A0A</color>
+    <color name="homeText">#2AC9C5C5</color>
 </resources>
